@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CeeLearnAndDo.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,5 +9,11 @@ namespace CeeLearnAndDo
 {
     public class DatabaseContex : DbContext
     {
+        public DbSet<User> Users { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleReply> ArticleReplies { get; set; }
+        public DbSet<Knowledgebase> Knowledgebases { get; set; }
+        public DbSet<KnowledgebaseReply> KnowledgebaseReplies { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }

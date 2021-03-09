@@ -10,6 +10,6 @@ namespace CeeLearnAndDo.Models
         public int Id { get; set; }
         public User User { get; set; }
         public string Content { get; set; }
-        public DateTime CheckedAt { get; set; }
+        public DateTime? CheckedAt { get; set; }
     }
 }
