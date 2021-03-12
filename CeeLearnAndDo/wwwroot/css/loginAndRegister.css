@@ -1,0 +1,127 @@
+﻿/* Css for the login and register page. */
+
+.box {
+    width: 50vw;
+    min-width: 50vw;
+    max-width: 50vw;
+    height: 60vh;
+    min-height: 50vh;
+    max-width: 50vh;
+    background-color: #FAFAFA;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 15vh;
+}
+
+.loginHeader {
+    padding-top: 30px;
+    text-align:center;
+    margin-bottom: 50px;
+}
+.formRow {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.formRow label {
+    margin-left: 100px;
+}
+
+.loginInput {
+    background: #E7E7E7;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+    float:right;
+    margin-right: 100px;
+    width: 225px;
+}
+
+.LoginSubmit {
+    background: #0A61F7;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+.registerInfo {
+    margin-top: 40px;
+    margin-left: 100px;
+    float:left;
+}
+
+.loginBox {
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
+    margin-top: 15vh !important;
+}
+
+.errorMessage {
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+    color: red;
+}
+
+@media only screen and (max-width: 1250px) {
+    .loginInput {
+        margin-right: 10px;
+    }
+
+    .LoginSubmit {
+        margin-right: 10px;
+    }
+    .registerInfo {
+        margin-left: 10px;
+    }
+
+    .formRow label {
+        margin-left: 10px;
+    }
+
+    .errorMessage {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 685px) {
+    .loginInput {
+        margin-right: 10px;
+    }
+
+    .LoginSubmit {
+        margin-right: 10px;
+    }
+
+    .registerInfo {
+        margin-left: 10px;
+    }
+
+    .formRow label {
+        margin-left: 10px;
+    }
+
+    .box {
+        width: 90vw;
+        height: 85vh !important;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .LoginSubmit {
+        margin-right: 100px;
+    }
+
+    .loginInput {
+        float: left !important;
+        margin-left: 10px;
+        width: 90%;
+    }
+}
