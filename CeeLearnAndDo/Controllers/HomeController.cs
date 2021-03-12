@@ -1,4 +1,5 @@
 ﻿using CeeLearnAndDo.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -25,6 +26,11 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Privacy()
         {
+            if (HttpContext.Session.GetInt32("User") == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 

@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/loginAndRegister.css" />
+}
+
+<div class="box">
+    <h1 class="loginHeader">Register</h1>
+    <form asp-action="Register" method="post">
+        <div class="formRow">
+            <label for="FirstName">First name</label>
+            <input type="text" name="FirstName" id="FirstName" class="loginInput" required />
+        </div>
+
+        <div class="formRow">
+            <label for="LastName">Last name</label>
+            <input type="text" name="LastName" id="LastName" class="loginInput" required />
+        </div>
+
+        <div class="formRow">
+            <label for="Email">Email address</label>
+            <input type="email" name="Email" id="Email" class="loginInput" required />
+        </div>
+
+        <div class="formRow">
+            <label for="Password">Password</label>
+            <input type="password" name="Password" id="Password" class="loginInput" required />
+        </div>
+
+        <div class="formRow">
+            <label for="ConfirmPassword">Confirm password</label>
+            <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="loginInput" required />
+        </div>
+
+        <div class="registerInfo">
+            Already have an account.
+            <a asp-action="Login">Sign in.</a>
+        </div>
+        <input type="submit" name="submit" value="Submit" class="LoginSubmit" />
+
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="errorMessage">@ViewData["Message"]</div>
+        }
+
+    </form>
+</div>
