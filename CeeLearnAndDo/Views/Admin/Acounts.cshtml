@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Beheer Acounts";
+
+    List<User> Users = (List<User>)ViewData["Users"];
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/admin.css" />
+}
+
+<div class="AcountsContainer">
+    <div class="AcountsHeader">
+        <div class="AcountsInfo">Accountbeheer:</div>
+        <form method="post" asp-action="Acounts" asp-controller="Admin">
+            @if (ViewData["Message"] != null)
+            {
+                <div class="AcountsMessage">
+                    @ViewData["Message"]
+                </div>
+            }
+            <input type="submit" name="submit" value="Zoeken" class="AcountsSubmit" />
+            <input type="text" name="search" placeholder="Zoeken op email" class="AcountsSearch" />
+        </form>
+    </div>
+    <div class="AcountsBody">
+        <table class="table table-hover">
+            <tr>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Acount actief</th>
+                @*<th scope="col"></th>*@
+            </tr>
+            @foreach (User user in Users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>@user.IsActive</td>
+                    @*<td>Hier komen links</td>*@
+                </tr>
+            }
+        </table>
+    </div>
+</div>

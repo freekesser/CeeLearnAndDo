@@ -1,0 +1,75 @@
+﻿/* Css for the accounts page */
+
+.AcountsContainer {
+    width: 75vw;
+    background: #FAFAFA;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: auto;
+}
+
+.AcountsHeader {
+    background: #0A61F7;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 90px;
+}
+
+.AcountsSubmit {
+    float: right;
+    margin-top: 32px;
+    margin-right: 15px;
+    padding: 3px 15px;
+    border: none;
+    border-radius: 0px 30px 30px 0px;
+    margin-left: 1px;
+}
+
+.AcountsSubmit:focus {
+    outline-width: 0;
+}
+
+.AcountsSubmit:hover {
+    color: white;
+    background-color: #0A61F7;
+    border: 1px solid white;
+    padding: 2px 14px;
+}
+
+.AcountsSearch {
+    float: right;
+    background: #F4F4F4;
+    border-radius: 30px 0px 0px 30px;
+    border: none;
+    padding: 3px 15px;
+    margin-top: 32px;
+    width: 250px;
+}
+
+.AcountsSearch:focus {
+    outline-width: 0;
+}
+
+.AcountsInfo {
+    vertical-align: middle;
+    width: 150px;
+    margin-left: 15px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    float: left;
+    margin-top: 32px;
+}
+
+.AcountsBody {
+    padding-bottom: 5px;
+}
+
+.AcountsMessage {
+    margin-left: 385px;
+    float: left;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 33px;
+}
