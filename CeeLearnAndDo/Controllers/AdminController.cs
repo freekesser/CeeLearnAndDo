@@ -16,7 +16,7 @@ namespace CeeLearnAndDo.Controllers
         {
             if (HttpContext.Session.GetInt32("User") == null)
             {
-                return RedirectToAction("Acount", "Login");
+                return RedirectToAction("Login", "Acount");
             }
 
             int id = (int)HttpContext.Session.GetInt32("User");
