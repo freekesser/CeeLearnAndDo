@@ -1,0 +1,77 @@
+[33mcommit 28e879876bcaa5a91ffe029fae48a679212827e7[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/dashboardpagina[m[33m)[m
+Author: bbergers <56074757+BBergers@users.noreply.github.com>
+Date:   Tue Mar 16 08:48:55 2021 +0100
+
+    stylen home en articles pagina
+
+[33mcommit acbd6da548da06f9c02c810142658928b9196bb7[m
+Author: bbergers <56074757+BBergers@users.noreply.github.com>
+Date:   Mon Mar 15 15:44:33 2021 +0100
+
+    stylen dashboard pagina
+
+[33mcommit bda9dbe9857238daf72c8b8350fa5841364e27df[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mcheckout[m[33m)[m
+Merge: 8a0acd4 e7144e9
+Author: freekesser <151082@student.horizoncollege.nl>
+Date:   Fri Mar 12 13:29:48 2021 +0100
+
+    Merge pull request #5 from HorizonCollegeICT/feature/MakingLoginAndRegister
+    
+    Made login and register & chagend isactive default to true
+
+[33mcommit e7144e97c1979016345cc2ebf9648c2d7a3465c4[m
+Author: freekesser <freek.v.esser@gmail.com>
+Date:   Fri Mar 12 13:27:37 2021 +0100
+
+    Made login and register & chagend isactive default to true
+
+[33mcommit 8a0acd48165bd84846ddfa7ecf65ef6c259e6f61[m
+Merge: f1f987e 9f38221
+Author: freekesser <151082@student.horizoncollege.nl>
+Date:   Thu Mar 11 10:54:42 2021 +0100
+
+    Merge pull request #4 from HorizonCollegeICT/feature/MakingDbAndModels
+    
+    Created models and setup Entity Framework
+
+[33mcommit 9f38221f15b6c4a93d099c782458af7fcf9fd86e[m
+Author: freekesser <freek.v.esser@gmail.com>
+Date:   Tue Mar 9 16:15:20 2021 +0100
+
+    Made the migration
+
+[33mcommit da9032458c9fd0966dc39286a6341ec7a9af2b3b[m
+Author: freekesser <freek.v.esser@gmail.com>
+Date:   Tue Mar 9 15:58:31 2021 +0100
+
+    Made all the models
+
+[33mcommit f1f987e1e194083f6dc7be299f30b6475d96c55a[m[33m ([m[1;32mdevelop[m[33m)[m
+Author: Freek <freek.v.esser@gmail.com>
+Date:   Tue Mar 9 08:57:13 2021 +0100
+
+    Create Project
+
+[33mcommit fc3259f4dc064b49b0ba2f83e51a0832ee71352b[m
+Author: freekesser <151082@student.horizoncollege.nl>
+Date:   Tue Feb 9 10:11:30 2021 +0100
+
+    Update readme.md
+
+[33mcommit abe76ba12e3d1a4e9d9d3b3d2d45c9810d9dbd98[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Feb 9 09:01:42 2021 +0000
+
+    Setting up GitHub Classroom Feedback
+
+[33mcommit 8596b4fc91fb82f1835369b11dcd082976cedc42[m[33m ([m[1;31morigin/feedback[m[33m)[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Feb 9 09:01:41 2021 +0000
+
+    GitHub Classroom Feedback
+
+[33mcommit 956d432c3f9c69722b5ed8172e1d173000b09700[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Feb 9 09:01:39 2021 +0000
+
+    Initial commit
