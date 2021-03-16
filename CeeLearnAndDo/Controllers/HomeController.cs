@@ -24,6 +24,11 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
+        public IActionResult Articles()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             if (HttpContext.Session.GetInt32("User") == null)
