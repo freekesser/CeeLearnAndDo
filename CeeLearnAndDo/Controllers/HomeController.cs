@@ -29,13 +29,8 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Contact()
         {
-            if (HttpContext.Session.GetInt32("User") == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-
             return View();
         }
 
