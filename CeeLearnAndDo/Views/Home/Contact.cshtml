@@ -2,6 +2,11 @@
     ViewData["Title"] = "Contact";
 }
 
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/Contact.css" />
+}
+
 <div class="container-fluid" style="background-color: #0a61f7; height: 325px;">
     <div class="row p-3 align-items-center">
         <div class="col-3 offset-2">
@@ -14,4 +19,23 @@
             <p>Out team is happy to answer your questions. <br> Fill out the form and we’ll be in touch as soon as possible</p>
         </div>
     </div>
+</div>
+
+<div class="QuestionDiv">
+    <h2 class="QuestionH2">Ask us a question</h2>
+    <form>
+        <label for="FirstName">Your first name</label>
+        <input type="text" id="FirstName" name="FirstName" /> <br />
+
+        <label for="LastName">Your last name</label>
+        <input type="text" id="LastName" name="LastName" /> <br />
+
+        <label for="Email">Your email</label>
+        <input type="email" id="Email" name="Email" /> <br />
+
+        <label for="Question">Your question</label>
+        <textarea id="Question" name="Question"></textarea> <br />
+
+        <input type="submit" value="Submit" name="submit" />
+    </form>
 </div>

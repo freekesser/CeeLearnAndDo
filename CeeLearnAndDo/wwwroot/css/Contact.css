@@ -1,0 +1,17 @@
+﻿
+
+.QuestionDiv {
+    width: 600px;
+    min-height: 500px;
+    background-color: #FAFAFA;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 25px;
+    margin-top: -50px;
+    margin-left: 25%;
+}
+
+.QuestionH2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
