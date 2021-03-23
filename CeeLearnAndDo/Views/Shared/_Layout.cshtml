@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    User user = (User) ViewData["User"];
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,7 +18,8 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="margin-bottom: 0px !important; border-bottom: 1px solid #0a61f7 !important;">
             <div class="container">
-                <a class="navbar-brand" style="color: #0A61F7 !important;" asp-area="" asp-controller="Home" asp-action="Index"><svg width="52" height="43" viewBox="0 0 52 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.66669 8.95841C8.66669 8.48324 8.89496 8.02752 9.30129 7.69152C9.70762 7.35551 10.2587 7.16675 10.8334 7.16675H41.1667C41.7413 7.16675 42.2924 7.35551 42.6988 7.69152C43.1051 8.02752 43.3334 8.48324 43.3334 8.95841V12.5417C43.3334 13.0169 43.1051 13.4726 42.6988 13.8086C42.2924 14.1446 41.7413 14.3334 41.1667 14.3334H10.8334C10.2587 14.3334 9.70762 14.1446 9.30129 13.8086C8.89496 13.4726 8.66669 13.0169 8.66669 12.5417V8.95841ZM8.66669 23.2917C8.66669 22.8166 8.89496 22.3609 9.30129 22.0248C9.70762 21.6888 10.2587 21.5001 10.8334 21.5001H23.8334C24.408 21.5001 24.9591 21.6888 25.3654 22.0248C25.7717 22.3609 26 22.8166 26 23.2917V34.0417C26 34.5169 25.7717 34.9726 25.3654 35.3086C24.9591 35.6446 24.408 35.8334 23.8334 35.8334H10.8334C10.2587 35.8334 9.70762 35.6446 9.30129 35.3086C8.89496 34.9726 8.66669 34.5169 8.66669 34.0417V23.2917ZM34.6667 23.2917C34.6667 22.8166 34.895 22.3609 35.3013 22.0248C35.7076 21.6888 36.2587 21.5001 36.8334 21.5001H41.1667C41.7413 21.5001 42.2924 21.6888 42.6988 22.0248C43.1051 22.3609 43.3334 22.8166 43.3334 23.2917V34.0417C43.3334 34.5169 43.1051 34.9726 42.6988 35.3086C42.2924 35.6446 41.7413 35.8334 41.1667 35.8334H36.8334C36.2587 35.8334 35.7076 35.6446 35.3013 35.3086C34.895 34.9726 34.6667 34.5169 34.6667 34.0417V23.2917Z" stroke="#0A61F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                <a class="navbar-brand" style="color: #0A61F7 !important;" asp-area="" asp-controller="Home" asp-action="Index">
+                    <svg width="52" height="43" viewBox="0 0 52 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.66669 8.95841C8.66669 8.48324 8.89496 8.02752 9.30129 7.69152C9.70762 7.35551 10.2587 7.16675 10.8334 7.16675H41.1667C41.7413 7.16675 42.2924 7.35551 42.6988 7.69152C43.1051 8.02752 43.3334 8.48324 43.3334 8.95841V12.5417C43.3334 13.0169 43.1051 13.4726 42.6988 13.8086C42.2924 14.1446 41.7413 14.3334 41.1667 14.3334H10.8334C10.2587 14.3334 9.70762 14.1446 9.30129 13.8086C8.89496 13.4726 8.66669 13.0169 8.66669 12.5417V8.95841ZM8.66669 23.2917C8.66669 22.8166 8.89496 22.3609 9.30129 22.0248C9.70762 21.6888 10.2587 21.5001 10.8334 21.5001H23.8334C24.408 21.5001 24.9591 21.6888 25.3654 22.0248C25.7717 22.3609 26 22.8166 26 23.2917V34.0417C26 34.5169 25.7717 34.9726 25.3654 35.3086C24.9591 35.6446 24.408 35.8334 23.8334 35.8334H10.8334C10.2587 35.8334 9.70762 35.6446 9.30129 35.3086C8.89496 34.9726 8.66669 34.5169 8.66669 34.0417V23.2917ZM34.6667 23.2917C34.6667 22.8166 34.895 22.3609 35.3013 22.0248C35.7076 21.6888 36.2587 21.5001 36.8334 21.5001H41.1667C41.7413 21.5001 42.2924 21.6888 42.6988 22.0248C43.1051 22.3609 43.3334 22.8166 43.3334 23.2917V34.0417C43.3334 34.5169 43.1051 34.9726 42.6988 35.3086C42.2924 35.6446 41.7413 35.8334 41.1667 35.8334H36.8334C36.2587 35.8334 35.7076 35.6446 35.3013 35.3086C34.895 34.9726 34.6667 34.5169 34.6667 34.0417V23.2917Z" stroke="#0A61F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
                     CeeLearnAndDo
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,9 +28,37 @@
                 </button>
                 <div class="">
                     <ul class="navbar-nav flex-grow-1 navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse mr-5">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Login">Login</a>
-                        </li>
+                        @if (user == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+
+                        @if (user != null && user.Role == 2)
+                        {
+                            // Routes voor sitebeheerder
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Acounts">Beheer acounts</a>
+                            </li>
+                        }
+
+                        @if (user != null && user.Role >= 1)
+                        {
+                            // Routes voor Medenwerker
+
+                        }
+
+                        @if (user != null)
+                        {
+                            // Routes voor Gebruikers
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
@@ -45,11 +78,11 @@
     </main>
 
     <div class="p-4">
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - CeeLearnAndDo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - CeeLearnAndDo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

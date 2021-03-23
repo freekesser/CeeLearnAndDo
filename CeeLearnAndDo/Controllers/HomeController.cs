@@ -1,4 +1,5 @@
-﻿using CeeLearnAndDo.Models;
+﻿using CeeLearnAndDo.Controllers.inheretance;
+using CeeLearnAndDo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,10 +11,9 @@ using System.Threading.Tasks;
 
 namespace CeeLearnAndDo.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : DefaultController
     {
         private readonly ILogger<HomeController> _logger;
-        DatabaseContex db = new DatabaseContex();
 
         public HomeController(ILogger<HomeController> logger)
         {
