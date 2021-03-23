@@ -23,19 +23,32 @@
 
 <div class="QuestionDiv">
     <h2 class="QuestionH2">Ask us a question</h2>
-    <form>
-        <label for="FirstName">Your first name</label>
-        <input type="text" id="FirstName" name="FirstName" /> <br />
+    <form asp-action="Contact" method="post">
+        <div class="mt-4">
+            <label class="Label" for="FirstName">Your first name</label>
+            <input class="Input" type="text" id="FirstName" name="FirstName" required /> <br />  
+        </div>
 
-        <label for="LastName">Your last name</label>
-        <input type="text" id="LastName" name="LastName" /> <br />
+        <div class="mt-4">
+            <label class="Label" for="LastName">Your last name</label>
+            <input class="Input" type="text" id="LastName" name="LastName" required /> <br />
+        </div>
 
-        <label for="Email">Your email</label>
-        <input type="email" id="Email" name="Email" /> <br />
+        <div class="mt-4">
+            <label class="Label" for="Email">Your email</label>
+            <input class="Input" type="email" id="Email" name="Email" required /> <br />
+        </div>
 
-        <label for="Question">Your question</label>
-        <textarea id="Question" name="Question"></textarea> <br />
+        <div class="mt-4">
+            <label class="Label" for="Question">Your question</label>
+            <textarea class="Input" id="Question" name="Question" rows="7" required ></textarea> <br />
+        </div>
 
-        <input type="submit" value="Submit" name="submit" />
+        <input class="Submit btn" type="submit" value="Submit" name="submit" />
+
+        @if (ViewData["Message"] != null)
+        {
+            <p class="Message">@ViewData["Message"]</p>
+        }
     </form>
 </div>

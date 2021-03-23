@@ -13,6 +13,7 @@ namespace CeeLearnAndDo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        DatabaseContex db = new DatabaseContex();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -31,6 +32,21 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contact(string FirstName, string LastName, string Email, string Question)
+        {
+            db.Questions.Add(new Question {
+                FirstName = FirstName,
+                LastName = LastName,
+                Email = Email,
+                Content = Question,
+            });
+            db.SaveChanges();
+
+            ViewData["Message"] = "We have received your Question and we will contact you with a respone as soon as possible.";
             return View();
         }
 
