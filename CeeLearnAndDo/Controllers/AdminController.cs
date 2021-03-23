@@ -1,4 +1,5 @@
-﻿using CeeLearnAndDo.Models;
+﻿using CeeLearnAndDo.Controllers.inheretance;
+using CeeLearnAndDo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,20 +9,10 @@ using System.Threading.Tasks;
 
 namespace CeeLearnAndDo.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : AuthController
     {
-        DatabaseContex db = new DatabaseContex();
-
         public IActionResult Acounts()
         {
-            if (HttpContext.Session.GetInt32("User") == null)
-            {
-                return RedirectToAction("Login", "Acount");
-            }
-
-            int id = (int)HttpContext.Session.GetInt32("User");
-            User user = db.Users.Where(u => u.Id.Equals(id)).FirstOrDefault();
-
             if (user == null || user.Role != 2)
             {
                 return RedirectToAction("Index", "Home");
