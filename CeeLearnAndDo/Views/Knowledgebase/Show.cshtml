@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Show Knowledgebase";
+
+    Knowledgebase knowledgebase = (Knowledgebase) ViewData["Knowledgebase"];
+}
+
+<div class="container">
+    <h1 class="mt-2">@knowledgebase.Title</h1>
+    <a asp-action="Index" asp-controller="Knowledgebase"><-- Terug</a>
+    <div class="row"><div class="col"><hr /></div></div>
+    <div class="mt-4">@Html.Raw(knowledgebase.Content)</div>
+    <div class="row"><div class="col"><hr /></div></div>
+    @* Here comes the replys *@
+</div>

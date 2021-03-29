@@ -27,19 +27,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="">
-                    <ul class="navbar-nav flex-grow-1 navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse mr-5">
-                        @if (user == null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Login">Login</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Logout">Logout</a>
-                            </li>
-                        }
+                    <ul class="navbar-nav flex-grow-1 navbar-collapse collapse d-sm-inline-flex flex-sm-row mr-5">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Articles">Articles</a>
+                        </li>
 
                         @if (user != null && user.Role == 2)
                         {
@@ -62,15 +56,23 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Knowledgebase" asp-action="Index">Kennisbank</a>
                             </li>
                         }
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Articles">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+
+                        @if (user == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Acount" asp-action="Logout">Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
