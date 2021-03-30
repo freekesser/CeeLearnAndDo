@@ -14,11 +14,7 @@ namespace CeeLearnAndDo.Controllers
     public class HomeController : DefaultController
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        public HomeController(DatabaseContex databaseContex) : base(databaseContex) { }
 
         public IActionResult Index()
         {

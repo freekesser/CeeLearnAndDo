@@ -12,8 +12,13 @@ namespace CeeLearnAndDo.Controllers.inheretance
 {
     public class AuthController : Controller
     {
-        public DatabaseContex db = new DatabaseContex();
+        public DatabaseContex db;
         public User user = null;
+
+        public AuthController(DatabaseContex databaseContex)
+        {
+            this.db = databaseContex;
+        }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {

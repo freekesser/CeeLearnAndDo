@@ -11,6 +11,8 @@ namespace CeeLearnAndDo.Controllers
 {
     public class AdminController : AuthController
     {
+        public AdminController(DatabaseContex databaseContex) : base(databaseContex) { }
+
         public IActionResult Acounts()
         {
             if (user == null || user.Role != 2)

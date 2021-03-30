@@ -12,8 +12,13 @@ namespace CeeLearnAndDo.Controllers.inheretance
 {
     public class DefaultController : Controller
     {
-        public DatabaseContex db = new DatabaseContex();
+        public DatabaseContex db;
         public User user = null;
+
+        public DefaultController(DatabaseContex databaseContex)
+        {
+            this.db = databaseContex;
+        }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -25,6 +30,5 @@ namespace CeeLearnAndDo.Controllers.inheretance
 
             ViewData["User"] = user;
         }
-        // filterContext.Result = new RedirectToRouteResult("Default", new RouteValueDictionary { { "controller", "Acount" }, { "action", "Login" } });
     }
 }

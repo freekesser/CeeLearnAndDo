@@ -10,6 +10,8 @@ namespace CeeLearnAndDo.Controllers
 {
     public class KnowledgebaseController : AuthController
     {
+        public KnowledgebaseController(DatabaseContex databaseContex) : base(databaseContex) { }
+
         public IActionResult Index()
         {
             ViewData["Knowledgebases"] = db.Knowledgebases.ToList();

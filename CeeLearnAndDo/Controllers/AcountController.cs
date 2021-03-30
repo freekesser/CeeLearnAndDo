@@ -10,7 +10,12 @@ namespace CeeLearnAndDo.Controllers
 {
     public class AcountController : Controller
     {
-        DatabaseContex db = new DatabaseContex();
+        DatabaseContex db;
+
+        public AcountController(DatabaseContex databaseContex)
+        {
+            this.db = databaseContex;
+        }
 
         public IActionResult Login()
         {
