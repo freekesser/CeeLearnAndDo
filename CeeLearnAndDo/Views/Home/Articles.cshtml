@@ -1,4 +1,8 @@
-﻿@section Styles
+﻿@{ 
+    User user = (User) ViewData["User"];
+}
+
+@section Styles
 {
     <link rel="stylesheet" href="~/css/articles.css" />
 }
@@ -24,6 +28,10 @@
         </div>
     </div>
 </div>
+
+@if (user != null && user.Role > 0) { 
+    <a class="btn btn-dark float-left text-white ml-4" asp-action="Create" asp-controller="Article">Create Article</a>
+}
 
 <div class="container mt-6 artcontainer" style="margin-top:50px;">
     @for (int i = 0; i < 6; i++)

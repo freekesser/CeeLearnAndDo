@@ -1,4 +1,5 @@
 ﻿using CeeLearnAndDo.Controllers.inheretance;
+using CeeLearnAndDo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,19 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
-        public IActionResult Show()
+        [HttpPost]
+        public IActionResult Create(string Title, string Description, string Content)
         {
-            return View();
+            db.Articles.Add(new Article {
+                Title = Title,
+                Description = Description,
+                Content = Content,
+                User = user,
+                CreatedAt = DateTime.UtcNow,
+            });
+            db.SaveChanges();
+
+            return RedirectToAction("Article", "HomeController");
         }
 
         public IActionResult Reply()

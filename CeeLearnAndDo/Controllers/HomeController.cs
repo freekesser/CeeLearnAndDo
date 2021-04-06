@@ -23,6 +23,13 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Articles()
         {
+            ViewData["Articles"] = db.Articles.ToList();
+            return View();
+        }
+
+        public IActionResult Article(int Id)
+        {
+            ViewData["Article"] = db.Articles.Find(Id);
             return View();
         }
 

@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Create Article";
+
+    User user = (User)ViewData["User"];
+}
+
+@section Scripts {
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>CKEDITOR.replace("Editor");</script>
+}
+
+<div class="container">
+    <h1 class="mt-2">Create Knowledgebase</h1>
+    <a asp-action="Index" asp-controller="Knowledgebase"><-- Terug</a>
+    <div class="mt-4">
+        <form method="post" asp-action="Create" asp-controller="Article">
+            <div class="form-group">
+                <label for="Title">Titel:</label>
+                <input type="text" name="Title" id="Title" class="form-control" placeholder="Title" />
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <input type="text" name="Description" id="Description" class="form-control" placeholder="Title" />
+            </div>
+            <div class="form-group">
+                <label for="Editor">Content:</label>
+                <textarea id="Editor" name="Content" class="form-control"></textarea>
+            </div>
+            <input type="submit" name="Submit" class="btn btn-primary mt-2" />
+        </form>
+    </div>
+</div>
+
