@@ -220,13 +220,15 @@ namespace CeeLearnAndDo.Migrations
 
             modelBuilder.Entity("CeeLearnAndDo.Models.KnowledgebaseReply", b =>
                 {
-                    b.HasOne("CeeLearnAndDo.Models.Knowledgebase", null)
+                    b.HasOne("CeeLearnAndDo.Models.Knowledgebase", "Knowledgebase")
                         .WithMany("KnowledgebaseReplies")
                         .HasForeignKey("KnowledgebaseId");
 
                     b.HasOne("CeeLearnAndDo.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Knowledgebase");
 
                     b.Navigation("User");
                 });

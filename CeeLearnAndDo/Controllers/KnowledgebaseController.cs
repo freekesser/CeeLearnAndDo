@@ -14,13 +14,24 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Index()
         {
-            ViewData["Knowledgebases"] = db.Knowledgebases.ToList();
+            if (user.Role == 0)
+            {
+                ViewData["Knowledgebases"] = db.Knowledgebases.Where(k => k.PublishedAt != null).ToList();
+            }
+            else
+            {
+                ViewData["Knowledgebases"] = db.Knowledgebases.ToList();
+            }
             return View();
         }
 
         public IActionResult Show(int id)
         {
-            ViewData["Knowledgebase"] = db.Knowledgebases.Where(k => k.Id == id).FirstOrDefault();
+            Knowledgebase knowledgebase = db.Knowledgebases.Where(k => k.Id == id).FirstOrDefault();
+
+            ViewData["Replys"] = db.KnowledgebaseReplies.Where(k => k.Knowledgebase.Id == id).ToList();
+            ViewData["Knowledgebase"] = knowledgebase;
+
             return View();
         }
 
@@ -40,6 +51,45 @@ namespace CeeLearnAndDo.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Publish(int Id)
+        {
+            Knowledgebase knowledgebase = db.Knowledgebases.Where(k => k.Id.Equals(Id)).FirstOrDefault();
+            knowledgebase.PublishedAt = DateTime.UtcNow;
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int Id)
+        {
+            Knowledgebase knowledgebase = db.Knowledgebases.Where(k => k.Id.Equals(Id)).FirstOrDefault();
+            db.Knowledgebases.Remove(knowledgebase);
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Reply(int Id, string Content)
+        {
+            Knowledgebase knowledgebase = db.Knowledgebases.Find(Id);
+            db.KnowledgebaseReplies.Add(new KnowledgebaseReply
+            {
+                User = user,
+                Content = Content,
+                Knowledgebase = knowledgebase,
+                CreatedAt = DateTime.UtcNow,
+            });
+
+            db.SaveChanges();
+
+            return RedirectToAction("Show", Id);
         }
     }
 }
