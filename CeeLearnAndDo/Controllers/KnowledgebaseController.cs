@@ -68,6 +68,9 @@ namespace CeeLearnAndDo.Controllers
         public IActionResult Delete(int Id)
         {
             Knowledgebase knowledgebase = db.Knowledgebases.Where(k => k.Id.Equals(Id)).FirstOrDefault();
+            List<KnowledgebaseReply> knowledgebaseReplies = db.KnowledgebaseReplies.Where(k => k.Knowledgebase.Id.Equals(Id)).ToList();
+
+            db.KnowledgebaseReplies.RemoveRange(knowledgebaseReplies);
             db.Knowledgebases.Remove(knowledgebase);
 
             db.SaveChanges();
