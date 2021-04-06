@@ -1,8 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Kennisbank";
 
-    List<Knowledgebase> knowledgebases = (List<Knowledgebase>) ViewData["Knowledgebases"];
-    User user = (User) ViewData["User"];
+    List<Knowledgebase> knowledgebases = (List<Knowledgebase>)ViewData["Knowledgebases"];
+    User user = (User)ViewData["User"];
 }
 
 <div class="container">
@@ -11,15 +11,25 @@
         <a class="float-right mt-4" asp-action="Create" asp-controller="Knowledgebase">Create a Question</a>
     </div> <br /> <br />
     <div class="mt-1">
-    @foreach (Knowledgebase knowledgebase in knowledgebases)
-    {
-        <hr />
-        <div class="w-100">
-            <p class="w-100">
-                @knowledgebase.Title
-                <a asp-action="Show" asp-controller="Knowledgebase" asp-route-id="@knowledgebase.Id" class="float-right">Read more</a>
-            </p>
-        </div>
-    }
+        @if (knowledgebases == null)
+        {
+            <hr />
+            <div class="w-100">
+                Could not find anything. Try again later.
+            </div>
+        }
+        else
+        {
+            @foreach (Knowledgebase knowledgebase in knowledgebases)
+            {
+                <hr />
+                <div class="w-100">
+                    <p class="w-100">
+                        @knowledgebase.Title
+                        <a asp-action="Show" asp-controller="Knowledgebase" asp-route-id="@knowledgebase.Id" class="float-right">Read more</a>
+                    </p>
+                </div>
+            }
+        }
     </div>
 </div>

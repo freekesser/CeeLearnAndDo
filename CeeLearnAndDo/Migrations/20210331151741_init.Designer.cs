@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CeeLearnAndDo.Migrations
 {
     [DbContext(typeof(DatabaseContex))]
-    [Migration("20210331083741_init")]
+    [Migration("20210331151741_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -222,13 +222,15 @@ namespace CeeLearnAndDo.Migrations
 
             modelBuilder.Entity("CeeLearnAndDo.Models.KnowledgebaseReply", b =>
                 {
-                    b.HasOne("CeeLearnAndDo.Models.Knowledgebase", null)
+                    b.HasOne("CeeLearnAndDo.Models.Knowledgebase", "Knowledgebase")
                         .WithMany("KnowledgebaseReplies")
                         .HasForeignKey("KnowledgebaseId");
 
                     b.HasOne("CeeLearnAndDo.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Knowledgebase");
 
                     b.Navigation("User");
                 });
