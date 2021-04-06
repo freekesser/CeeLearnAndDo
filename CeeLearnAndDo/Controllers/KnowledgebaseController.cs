@@ -89,7 +89,7 @@ namespace CeeLearnAndDo.Controllers
 
             db.SaveChanges();
 
-            return RedirectToAction("Show", Id);
+            return RedirectToAction("Show", new { id = Id });
         }
     }
 }
