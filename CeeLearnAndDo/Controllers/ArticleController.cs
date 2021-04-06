@@ -32,6 +32,19 @@ namespace CeeLearnAndDo.Controllers
             return RedirectToAction("Articles", "Home");
         }
 
+        [HttpPost]
+        public IActionResult Delete(int Id)
+        {
+            Article article = db.Articles.Find(Id);
+            List<ArticleReply> articleReplies = db.ArticleReplies.Where(a => a.Article.Equals(article)).ToList();
+
+            db.RemoveRange(articleReplies);
+            db.Remove(article);
+            db.SaveChanges();
+
+            return RedirectToAction("Articles", "Home");
+        }
+
         public IActionResult Reply()
         {
             return View();

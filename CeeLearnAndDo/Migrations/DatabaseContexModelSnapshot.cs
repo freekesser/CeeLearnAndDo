@@ -198,13 +198,15 @@ namespace CeeLearnAndDo.Migrations
 
             modelBuilder.Entity("CeeLearnAndDo.Models.ArticleReply", b =>
                 {
-                    b.HasOne("CeeLearnAndDo.Models.Article", null)
+                    b.HasOne("CeeLearnAndDo.Models.Article", "Article")
                         .WithMany("ArticleReplies")
                         .HasForeignKey("ArticleId");
 
                     b.HasOne("CeeLearnAndDo.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Article");
 
                     b.Navigation("User");
                 });
