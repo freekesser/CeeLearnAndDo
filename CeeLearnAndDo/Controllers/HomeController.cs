@@ -29,8 +29,26 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Article(int Id)
         {
-            ViewData["Article"] = db.Articles.Find(Id);
+            Article article = db.Articles.Find(Id);
+            ViewData["ArticleReplies"] = db.ArticleReplies.Where(a => a.Article.Equals(article)).ToList();
+            ViewData["Article"] = article;
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Reply(int Id, string Content)
+        {
+            Article article = db.Articles.Find(Id);
+            db.ArticleReplies.Add(new ArticleReply {
+                User = user,
+                Article = article,
+                Content = Content,
+                CreatedAt = DateTime.UtcNow,
+            });
+            db.SaveChanges();
+
+            return RedirectToAction("Article", new { Id = Id });
         }
 
         public IActionResult Contact()

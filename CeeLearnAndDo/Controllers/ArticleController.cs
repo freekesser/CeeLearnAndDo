@@ -44,10 +44,5 @@ namespace CeeLearnAndDo.Controllers
 
             return RedirectToAction("Articles", "Home");
         }
-
-        public IActionResult Reply()
-        {
-            return View();
-        }
     }
 }

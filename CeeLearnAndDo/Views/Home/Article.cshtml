@@ -2,6 +2,7 @@
     ViewData["Title"] = "Show Article";
 
     Article article = (Article) ViewData["Article"];
+    List<ArticleReply> articleReplies = (List<ArticleReply>) ViewData["ArticleReplies"];
     User user = (User)ViewData["User"];
 }
 
@@ -31,15 +32,15 @@
     <div class="row"><div class="col"><hr /></div></div>
 
 
-    @*<div>
+    <div>
             <div class="mb-4">
                 <h4>Replys:</h4>
-                @if (user.Role > 0)
+                @if (user != null)
                 {
                     <button class="btn btn-dark float-right" style="margin-top: -40px" onclick="ShowReplyForm()" id="ReplyButton">Reply</button>
                     <div class="d-none" id="ReplyDiv">
                         <form method="post" asp-action="Reply">
-                            <input type="hidden" name="Id" value="@knowledgebase.Id" />
+                            <input type="hidden" name="Id" value="@article.Id" />
                             <textarea name="Content" id="Editor"></textarea>
                             <input type="submit" class="btn btn-primary" value="Post Reply" />
                         </form>
@@ -47,24 +48,24 @@
                 }
             </div>
 
-            @if (knowledgebaseReplies == null)
+            @if (articleReplies == null)
             {
                 <p>No one has replyed yet.</p>
             }
             else
             {
-                @foreach (KnowledgebaseReply knowledgebaseReply in knowledgebaseReplies)
+                @foreach (ArticleReply articleReply in articleReplies)
                 {
                     <div class="row"><div class="col"><hr /></div></div>
                     <div>
                         <div class="mb-2">
-                            Reply made by  @knowledgebaseReply.User.FirstName, @knowledgebaseReply.TimeSinceUpdate().
+                            Replyd @articleReply.TimeSinceUpdate().
                         </div>
                         <div>
-                            @Html.Raw(knowledgebaseReply.Content)
+                            @Html.Raw(articleReply.Content)
                         </div>
                     </div>
                 }
             }
-        </div>*@
+        </div>
 </div>

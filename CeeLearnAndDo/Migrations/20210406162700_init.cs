@@ -95,7 +95,7 @@ namespace CeeLearnAndDo.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CheckedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ArticleId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
