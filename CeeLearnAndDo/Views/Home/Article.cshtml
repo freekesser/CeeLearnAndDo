@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Show Article";
+
+    Article article = (Article) ViewData["Article"];
+    User user = (User)ViewData["User"];
+}
+
+@section Scripts {
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>CKEDITOR.replace("Editor");</script>
+}
+
+<div class="container">
+    <h1 class="mt-2"> @article.Title </h1>
+    <a asp-action="Articles"><-- Terug</a>
+
+    <div class="row"><div class="col"><hr /></div></div>
+
+    <div class="mt-4">@Html.Raw(article.Content)</div>
+
+    <div class="row"><div class="col"><hr /></div></div>
+
+    @*<div>
+        <div class="mb-4">
+            <h4>Replys:</h4>
+            @if (user.Role > 0)
+            {
+                <button class="btn btn-dark float-right" style="margin-top: -40px" onclick="ShowReplyForm()" id="ReplyButton">Reply</button>
+                <div class="d-none" id="ReplyDiv">
+                    <form method="post" asp-action="Reply">
+                        <input type="hidden" name="Id" value="@knowledgebase.Id" />
+                        <textarea name="Content" id="Editor"></textarea>
+                        <input type="submit" class="btn btn-primary" value="Post Reply" />
+                    </form>
+                </div>
+            }
+        </div>
+
+        @if (knowledgebaseReplies == null)
+        {
+            <p>No one has replyed yet.</p>
+        }
+        else
+        {
+            @foreach (KnowledgebaseReply knowledgebaseReply in knowledgebaseReplies)
+            {
+                <div class="row"><div class="col"><hr /></div></div>
+                <div>
+                    <div class="mb-2">
+                        Reply made by  @knowledgebaseReply.User.FirstName, @knowledgebaseReply.TimeSinceUpdate().
+                    </div>
+                    <div>
+                        @Html.Raw(knowledgebaseReply.Content)
+                    </div>
+                </div>
+            }
+        }
+    </div>*@
+</div>

@@ -29,7 +29,7 @@ namespace CeeLearnAndDo.Controllers
             });
             db.SaveChanges();
 
-            return RedirectToAction("Article", "HomeController");
+            return RedirectToAction("Articles", "Home");
         }
 
         public IActionResult Reply()
