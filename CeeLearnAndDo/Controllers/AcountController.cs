@@ -45,6 +45,12 @@ namespace CeeLearnAndDo.Controllers
                 return View();
             }
 
+            if (User.IsActive == false)
+            {
+                ViewData["Message"] = "Your acount has been deactivaded please contact us via the contact form.";
+                return View();
+            }
+
             // Put id in the session and rederct to Home
             HttpContext.Session.SetInt32("User", User.Id);
 
