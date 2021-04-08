@@ -18,6 +18,20 @@ namespace CeeLearnAndDo.Controllers
 
         public IActionResult Index()
         {
+            List<User> Users = db.Users.Where(u => u.Role.Equals(1)).ToList();
+            List<User> GoeieUser = new List<User>();
+            int counter = 0;
+            foreach(User User in Users)
+            {
+                if(counter == 3)
+                {
+                    break;
+                }
+                GoeieUser.Add(User);
+                counter++;
+            }
+
+            ViewData["Consultants"] = GoeieUser;
             return View();
         }
 
