@@ -11,7 +11,7 @@
 
 <div class="AcountsContainer mt-4" >
     <div class="AcountsHeader">
-        <div class="AcountsInfo">Accountbeheer:</div>
+        <div class="AcountsInfo">Account Management</div>
         <form method="post" asp-action="Acounts" asp-controller="Admin">
             @if (ViewData["Message"] != null)
             {
@@ -19,8 +19,8 @@
                     @ViewData["Message"]
                 </div>
             }
-            <input type="submit" name="submit" value="Zoeken" class="AcountsSubmit" />
-            <input type="text" name="search" placeholder="Zoeken op email" class="AcountsSearch" />
+            <input type="submit" name="submit" value="Search" class="AcountsSubmit" />
+            <input type="text" name="search" placeholder="Search Email" class="AcountsSearch" />
         </form>
     </div>
     <div class="AcountsBody">
@@ -30,7 +30,7 @@
                 <th scope="col">Last name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
-                <th scope="col">Acount actief</th>
+                <th scope="col">Active</th>
                 @*<th scope="col"></th>*@
             </tr>
             @foreach (User user in Users)
