@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Reply Contact";
+
+    List<Question> questions = (List<Question>) ViewData["Questions"];
+}
+
+<div class="container">
+    <div class="w-100">
+        <h1 class="mt-2 float-left w-75">Reply Questions</h1>
+    </div> <br /> <br />
+    <div class="mt-1">
+        @if (questions == null)
+        {
+            <hr />
+            <div class="w-100">
+                Could not find anything. Try again later.
+            </div>
+        }
+        else
+        {
+            @foreach (Question question in questions)
+            {
+                <hr />
+                <div class="w-100">
+                    <p class="w-100">
+                        @question.FirstName @question.LastName
+                        <a asp-action="Show" asp-controller="Contact" asp-route-id="@question.Id" class="float-right">Read more / Reply</a>
+                    </p>
+                </div>
+            }
+        }
+    </div>
+</div>

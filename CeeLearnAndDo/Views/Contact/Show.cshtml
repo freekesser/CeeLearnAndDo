@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Reply / read Question";
+
+    Question question = (Question)ViewData["Question"];
+}
+
+@section Scripts {
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>CKEDITOR.replace("Editor");</script>
+}
+
+<div class="container">
+    <h1 class="mt-2">Reply / Read question</h1>
+    <a asp-action="Index" asp-controller="Contact"><-- Terug</a>
+
+    <div class="row"><div class="col"><hr /></div></div>
+    <div class="mt-4">@question.Content</div>
+    <div class="row"><div class="col"><hr /></div></div>
+
+    <form method="POST" asp-action="SendAnswer" asp-controller="Contact">
+        <input type="hidden" name="Question" value="@question.Id" />
+        <textarea name="Content" id="Editor"></textarea>
+        <input type="submit" class="btn btn-primary" value="Reply" />
+    </form>
+</div>

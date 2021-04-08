@@ -46,7 +46,9 @@
                         @if (user != null && user.Role >= 1)
                         {
                             // Routes voor Medenwerker
-
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Reply Questions</a>
+                            </li>
                         }
 
                         @if (user != null)
