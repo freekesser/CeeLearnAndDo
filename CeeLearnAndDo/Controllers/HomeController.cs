@@ -27,6 +27,13 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Articles(string Search)
+        {
+            ViewData["Articles"] = db.Articles.Where(a => a.Title.Contains(Search) || a.Description.Contains(Search)).ToList();
+            return View();
+        }
+
         public IActionResult Article(int Id)
         {
             Article article = db.Articles.Find(Id);
