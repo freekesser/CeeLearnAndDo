@@ -25,6 +25,20 @@ namespace CeeLearnAndDo.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(string Search)
+        {
+            if (user.Role == 0)
+            {
+                ViewData["Knowledgebases"] = db.Knowledgebases.Where(k => k.PublishedAt != null && k.Title.Contains(Search)).ToList();
+            }
+            else
+            {
+                ViewData["Knowledgebases"] = db.Knowledgebases.Where(k => k.Title.Contains(Search)).ToList();
+            }
+            return View();
+        }
+
         public IActionResult Show(int id)
         {
             Knowledgebase knowledgebase = db.Knowledgebases.Where(k => k.Id == id).FirstOrDefault();
