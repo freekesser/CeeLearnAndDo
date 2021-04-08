@@ -42,5 +42,46 @@ namespace CeeLearnAndDo.Controllers
             ViewData["Users"] = users;
             return View();
         }
+
+        public IActionResult ChangeActivation(int id)
+        {
+            User user = db.Users.Find(id);
+            if (user.IsActive)
+            {
+                user.IsActive = false;
+            } else
+            {
+                user.IsActive = true;
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("Acounts");
+        }
+
+        public IActionResult ChangeRoleUp(int Id)
+        {
+            User user = db.Users.Find(Id);
+
+            if (user.Role != 2)
+            {
+                user.Role++;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Acounts");
+        }
+
+        public IActionResult ChangeRoleDown(int Id)
+        {
+            User user = db.Users.Find(Id);
+
+            if (user.Role != 0)
+            {
+                user.Role--;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Acounts");
+        }
     }
 }

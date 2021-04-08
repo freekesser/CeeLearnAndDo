@@ -31,7 +31,8 @@
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
                 <th scope="col">Active</th>
-                @*<th scope="col"></th>*@
+                <th scope="col" style="width: 150px;"></th>
+                <th scope="col" style="width: 250px;">Change Role</th>
             </tr>
             @foreach (User user in Users)
             {
@@ -41,7 +42,13 @@
                     <td>@user.Email</td>
                     <td>@user.Role</td>
                     <td>@user.IsActive</td>
-                    @*<td>Hier komen links</td>*@
+                    <td>
+                        <a asp-action="ChangeActivation" asp-route-id="@user.Id">Change Active</a>
+                    </td>
+                    <td>
+                        <a asp-action="ChangeRoleDown" asp-route-id="@user.Id" class="mr-2">One role down</a>
+                        <a asp-action="ChangeRoleUp" asp-route-id="@user.Id">One role up</a>
+                    </td>
                 </tr>
             }
         </table>
